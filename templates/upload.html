@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Meyawo landing page.">
+    <meta name="author" content="Devcrud">
+    <title>PUBLIC AUDITING</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Meyawo main styles -->
+	<link rel="stylesheet" href="/static/css/meyawo.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+   <!-- Page Navbar -->
+   <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+    <div class="container">
+        <a class="logo" href="#">Public Auditing</a>         
+        <ul class="nav">
+            <li class="item">
+                <a class="link" href="/">Home</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('upload')}}">Upload File</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('viewmyfile')}}">View File</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('viewallfile')}}">View All File</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('filestatus')}}">File Status</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('viewresponse')}}">View Response</a>
+            </li>
+            <li class="item">
+                <a class="link" href="/">Logout</a>
+            </li>
+        </ul>
+        <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+        </a>
+    </div>          
+</nav><!-- End of Page Navbar -->
+
+    <!-- page header -->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+         <!-- contact section -->
+    <section class="section" id="contact">
+        <div class="card text-bg-dark mb-3" >
+            <div class="card-body">
+        <div class="container text-center">
+            <center>
+                <div class="col-md-8">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                            <b><h3><div class="alert alert-{{ category }}">
+                                    {{ message }}
+                                </div></h3></b>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+            
+                    {% block content %} {% endblock %}
+                </div>
+            </center>
+            <h6 class="section-title mb-5">Upload file</h6>
+            <!-- contact form -->
+            <form action="{{url_for('upload')}}" class="contact-form col-md-10 col-lg-8 m-auto" method="post" enctype="multipart/form-data">
+                    <div class="form-group col-sm-6">
+                        <input type="name" class="form-control" id="filename" name='filename' placeholder="Enter filename"  style="width: 309.22222px;margin-right: 154px;height: 49.22222px;" required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input type="file" class="form-control" id="files" name='files' placeholder="Enter file" style="width: 309.22222px;margin-right: 154px;height: 49.22222px;" required>                 
+                    </div>
+                    <div class="form-group col-sm-12 mt-3">
+                        <input type="submit" value="Upload" class="btn btn-outline-primary rounded">                  
+                    </div>
+                </div>  
+            </form><!-- end of contact form -->
+        </div><!-- end of container -->
+    </div>
+</div>
+    </section><!-- end of contact section -->           
+    </header><!-- end of page header -->
+
+    	<!-- core  -->
+        <script src="/static/vendors/jquery/jquery-3.4.1.js"></script>
+        <script src="/static/vendors/bootstrap/bootstrap.bundle.js"></script>
+    
+        <!-- bootstrap 3 affix -->
+        <script src="/static/vendors/bootstrap/bootstrap.affix.js"></script>
+    
+        <!-- Meyawo js -->
+        <script src="/static/js/meyawo.js"></script>
+    
+    </body>
+    </html>
+    

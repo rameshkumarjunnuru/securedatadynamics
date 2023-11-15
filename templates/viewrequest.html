@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Meyawo landing page.">
+    <meta name="author" content="Devcrud">
+    <title>PUBLIC AUDITING</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Meyawo main styles -->
+	<link rel="stylesheet" href="/static/css/meyawo.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+   <!-- Page Navbar -->
+  <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+    <div class="container">
+        <a class="logo" href="#">Public Auditing</a>         
+        <ul class="nav">
+            <li class="item">
+                <a class="link" href="/">Home</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('viewrequest')}}">View Owners</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('cloudviewfile')}}">View all files</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('viewfilereq')}}">View User Request</a>
+            </li>
+            <li class="item">
+                <a class="link" href="/">Logout</a>
+            </li>
+        </ul>
+        <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+        </a>
+    </div>          
+</nav><!-- End of Page Navbar -->
+
+    <!-- page header -->
+    <header id="home" class="header">
+
+   
+<section class="hero-section">
+    <div class="container" style="margin-left: 56px;width: 1114px;">
+       
+            <center>
+                <h4 style="color:#e703fc;margin-left: 99px;width: 769px;">DATA OWENER DETAILS</h4>
+            </center>
+       
+        <center>
+            <center>
+                <table >
+                    <tr>
+                        <b><th style="height: 25px;padding-left: 20px;border-right-width: 2px;padding-right: 22px;border: 1px solid black;
+                            border-collapse: collapse;">ID</th></b>
+                        <b><th style="height: 25px;padding-left: 20px;border-right-width: 2px;padding-right: 22px;border: 1px solid black;
+                            border-collapse: collapse;">OWNER NAME</th></b>
+                        <b><th style="height: 25px;padding-left: 20px;border-right-width: 2px;padding-right: 22px;border: 1px solid black;
+                    border-collapse: collapse;">OWNER EMAIL</th></b>
+                        <b><th style="height: 25px;padding-left: 20px;border-right-width: 2px;padding-right: 22px;border: 1px solid black;
+                    border-collapse: collapse;">ADDRES</th></b>
+                        <b><th style="height: 25px;padding-left: 20px;border-right-width: 2px;padding-right: 22px;border: 1px solid black;
+                    border-collapse: collapse;">CONTACT</th></vb>
+                        <b><th style="height: 25px;padding-left: 20px;border-right-width: 2px;padding-right: 22px;border: 1px solid black;
+                    border-collapse: collapse;">ACTION</th></b>
+                    </tr>
+                    {% for r in row_val %}
+					<tr>
+						{% for v in r %}
+						<b><td style="height: 25px;padding-left: 20px;border-right-width: 2px;padding-right: 22px;border: 1px solid black;
+                            border-collapse: collapse;"></b>
+							{{v}}
+							{% if r.index(v)==4 %}
+                            <b><td style="height: 25px;padding-left: 20px;border-right-width: 2px;padding-right: 22px;border: 1px solid black;
+                                border-collapse: collapse;"><a href="{{ url_for('acceptreq', s1=r[0],s2=r[2]) }}" style="color: red">Accept</a>/<a href="{{ url_for('rejectreq',s1=r[0],s2=r[2]) }}" style="color: red">Reject</a></td></b>
+						</td>
+						{% endif %}
+						{% endfor %}
+					</tr>
+						{% endfor %}
+					</table>
+            </center>
+        </center>
+    </div>
+                 
+    </header><!-- end of page header -->
+
+    
+	<!-- core  -->
+    <script src="/static/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="/static/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="/static/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Meyawo js -->
+    <script src="/static/js/meyawo.js"></script>
+
+</body>
+</html>

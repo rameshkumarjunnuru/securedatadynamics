@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Meyawo landing page.">
+    <meta name="author" content="Devcrud">
+    <title>PUBLIC AUDITING</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Meyawo main styles -->
+	<link rel="stylesheet" href="/static/css/meyawo.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="#">Public Auditing</a>         
+            <ul class="nav">
+                <li class="item">
+                    <a class="link" href="/">Home</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="{{url_for('upload')}}">Upload File</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="{{url_for('viewmyfile')}}">View File</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="{{url_for('viewallfile')}}">View All File</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="{{url_for('filestatus')}}">File Status</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="{{url_for('viewresponse')}}">View Response</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="/">Logout</a>
+                </li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+                </div>
+            </a>
+        </div>          
+    </nav><!-- End of Page Navbar -->
+
+    <!-- page header -->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h6 class="header-title">
+                <span class="down" style="width: 1004px; right: 235px;">Welcome To</span>
+            </h6>          
+        </div>              
+    </header><!-- end of page header -->
+
+    
+	<!-- core  -->
+    <script src="/static/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="/static/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="/static/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Meyawo js -->
+    <script src="/static/js/meyawo.js"></script>
+
+</body>
+</html>

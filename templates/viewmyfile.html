@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Meyawo landing page.">
+    <meta name="author" content="Devcrud">
+    <title>PUBLIC AUDITING</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Meyawo main styles -->
+	<link rel="stylesheet" href="/static/css/meyawo.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid black;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        
+        </style>
+  <!-- Page Navbar -->
+  <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+    <div class="container">
+        <a class="logo" href="#">Public Auditing</a>         
+        <ul class="nav">
+            <li class="item">
+                <a class="link" href="/">Home</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('upload')}}">Upload File</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('viewmyfile')}}">View File</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('viewallfile')}}">View All File</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('filestatus')}}">File Status</a>
+            </li>
+            <li class="item">
+                <a class="link" href="{{url_for('viewresponse')}}">View Response</a>
+            </li>
+            <li class="item">
+                <a class="link" href="/">Logout</a>
+            </li>
+        </ul>
+        <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+        </a>
+    </div>          
+</nav><!-- End of Page Navbar -->
+
+    <!-- page header -->
+    <header id="home" class="header">
+
+   
+<section class="hero-section">
+    <div class="container" style="margin-left: 10px;width: 1114px;">
+        <br><br>
+        <br>
+        <br>
+        <center>	
+            <b>
+                <h2 style="color:#d3fc03">VIEW MY UPLOADED FILES</h2>
+            </b>
+           
+            <table>
+                <tr>
+                   <th>ID</th>
+                   <th>OWNER EMAIL</th>
+                   <th>FILE NAME</th>
+                   <th>ENCRYPTED DATA</th>
+                </tr>
+                    {% for r in row_val %}
+                    <tr>
+                       {% for d in r %}
+                        <td>{{d}}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+                <br>
+            </center>
+        </form>         
+    </header><!-- end of page header -->
+
+    
+	<!-- core  -->
+    <script src="/static/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="/static/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="/static/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Meyawo js -->
+    <script src="/static/js/meyawo.js"></script>
+
+</body>
+</html>
